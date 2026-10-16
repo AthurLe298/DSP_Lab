@@ -1,11 +1,10 @@
 // [yn, yorigin] = advance(xn, xorigin, k)
-// y(n) = x(n+k), k>0  
+// y(n) = x(n+k), k>0  (shift to the left)
 function [yn, yorigin] = advance(xn, xorigin, k)
+    nx = (1:length(xn)) - xorigin;   
+    ny = nx - k;                     
     yn = xn;
-    yorigin = xorigin + k;
-
-    nx = (1:length(xn)) - xorigin;
-    ny = (1:length(yn)) - yorigin;
+    yorigin = 1 - ny(1);
 
     subplot(2,1,1); stemplot(nx, xn, "x(n)");
     subplot(2,1,2); stemplot(ny, yn, "y(n) = x(n+" + string(k) + ")");
