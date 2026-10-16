@@ -2,7 +2,7 @@
 // y(n) = x(n+k), k>0  (shift to the left)
 function [yn, yorigin] = advance(xn, xorigin, k)
     nx = (1:length(xn)) - xorigin;   
-    ny = nx - k;                     
+    ny = nx - k;                    
     yn = xn;
     yorigin = 1 - ny(1);
 

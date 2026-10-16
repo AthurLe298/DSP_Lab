@@ -1,7 +1,8 @@
 // [yn, yorigin] = delay(xn, xorigin, k)
 // y(n) = x(n-k), k>0  (shift to the right)
+
 function [yn, yorigin] = delay(xn, xorigin, k)
-    nx = (1:length(xn)) - xorigin;   
+    nx = (1:length(xn)) - xorigin;  
     ny = nx + k;                     
     yn = xn;
     yorigin = 1 - ny(1);             
