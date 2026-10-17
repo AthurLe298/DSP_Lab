@@ -26,5 +26,4 @@ subplot(3, 2, 4); stemplot(n, xo, "Odd component xo(n)");
 subplot(3, 2, 5); stemplot(n, x - (xe + xo), "Difference plot x(n) - [xe(n) + xo(n)]");
 savefig("add_ex2_4");
 
-mprintf("  fold: xrorigin = %d,  add: sorigin = %d, dorigin = %d\n", xrorigin, sorigin, dorigin);
 mprintf("  max|x(n) - [xe(n) + xo(n)]| = %g\n", max(abs(x - (xe + xo))));
