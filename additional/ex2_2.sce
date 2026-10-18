@@ -82,10 +82,17 @@ subplot(2,2,3); stemplot(n, xe,      "(g) xe(n) = [x(n) + x(-n)]/2");
 subplot(2,2,4); stemplot(n, xo,      "(h) xo(n) = [x(n) - x(-n)]/2");
 savefig("add_ex2_2_evenodd");
 
-// non-zero samples of every result
+// samples of x(n) and results (a)-(h)
+nx = (1:length(xn)) - xorigin;
+mprintf("  x(n) n = %s\n       y = %s\n", strcat(string(nx), " "), strcat(string(xn), " "));
 names = ["(a)", "(b)", "(c)", "(d)", "(e)", "(f)", "(g)", "(h)"];
 for i = 1:8
-    k = find(Y(i,:) <> 0);
+    if i == 8 then
+        // (h) odd component: print full range spanned by decomposition, not skipping zeros
+        k = min(find(Y(i,:) <> 0)) : max(find(Y(i,:) <> 0));
+    else
+        k = find(Y(i,:) <> 0);
+    end
     mprintf("  %s n = %s\n      y = %s\n", names(i), strcat(string(n(k)), " "), strcat(string(Y(i,k)), " "));
 end
 mprintf("  max|Lab 3 functions - direct substitution| = %g\n", max(abs(Y - ref)));

@@ -48,8 +48,17 @@ subplot(3,2,5); stemplot(m, dp,  "(b)2 delay 4 -> x(n-4)");
 subplot(3,2,6); stemplot(m, b2p, "(b)2 then fold -> x(-n-4)");
 savefig("add_ex2_1");
 
-disp("  (a) x(n), n = -3..3:");  disp(xn);
-mprintf("  (b)1 yorigin = %d (n = %d..%d),  (b)2 yorigin = %d (n = %d..%d)\n", ..
-        b1origin, 1 - b1origin, length(b1n) - b1origin, b2origin, 1 - b2origin, length(b2n) - b2origin);
+nx  = (1:length(xn)) - xorigin;
+nb1 = (1:length(b1n)) - b1origin;
+nb2 = (1:length(b2n)) - b2origin;
+nc  = nb1;
+yc  = xf(-nc + 4);
+
+mprintf("  (a)  n = %s\n       y = %s\n", strcat(string(nx), " "), strcat(string(xn), " "));
+mprintf("  (b)1 yorigin = %d (n = %d..%d)\n       n = %s\n       y = %s\n", ..
+        b1origin, 1 - b1origin, length(b1n) - b1origin, strcat(string(nb1), " "), strcat(string(b1n), " "));
+mprintf("  (b)2 yorigin = %d (n = %d..%d)\n       n = %s\n       y = %s\n", ..
+        b2origin, 1 - b2origin, length(b2n) - b2origin, strcat(string(nb2), " "), strcat(string(b2n), " "));
+mprintf("  (c)  n = %s\n       y = %s\n", strcat(string(nc), " "), strcat(string(yc), " "));
 mprintf("  (d) max|(b)1 - (c)| = %g   max|(b)2 - (c)| = %g\n", max(abs(b1p - c)), max(abs(b2p - c)));
 mprintf("  (e) max|x(n) - delta/u expression| = %g\n", max(abs(xf(m) - xe)));

@@ -9,6 +9,7 @@ xorigin = 3;
 
 figure(1); clf();
 [yn, yorigin] = fold(xn, xorigin);
+alignaxes();
 
 disp("  yn =");       disp(yn);
 disp("  yorigin =");  disp(yorigin);

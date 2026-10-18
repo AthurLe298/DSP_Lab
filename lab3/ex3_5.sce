@@ -10,6 +10,7 @@ x2n = [1 1 2 3];  x2origin = 2;
 
 figure(1); clf();
 [yn, yorigin] = multi(x1n, x1origin, x2n, x2origin);
+alignaxes();
 
 disp("  yn =");       disp(yn);
 disp("  yorigin =");  disp(yorigin);

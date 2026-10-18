@@ -10,6 +10,7 @@ hn = [1 1 1];    horigin = 1;
 
 figure(1); clf();
 [yn, yorigin] = convolution(xn, xorigin, hn, horigin);
+alignaxes();
 
 disp("  yn =");       disp(yn);
 disp("  yorigin =");  disp(yorigin);

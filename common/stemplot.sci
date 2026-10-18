@@ -17,3 +17,23 @@ function stemplot(n, x, ttl)
     xlabel("n");
     ylabel("Amplitude");
 endfunction
+
+// alignaxes()
+// Aligns the horizontal (n-axis) data bounds across all subplots in the current figure
+// without modifying the signals or requiring the add() function.
+function alignaxes()
+    f = gcf();
+    xmin = %inf; xmax = -%inf;
+    for i = 1:length(f.children)
+        if f.children(i).type == "Axes" then
+            xmin = min(xmin, f.children(i).data_bounds(1, 1));
+            xmax = max(xmax, f.children(i).data_bounds(2, 1));
+        end
+    end
+    for i = 1:length(f.children)
+        if f.children(i).type == "Axes" then
+            f.children(i).data_bounds(1, 1) = xmin;
+            f.children(i).data_bounds(2, 1) = xmax;
+        end
+    end
+endfunction

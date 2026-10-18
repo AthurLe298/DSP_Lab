@@ -10,6 +10,7 @@ k = 1;
 
 figure(1); clf();
 [yn, yorigin] = advance(xn, xorigin, k);
+alignaxes();
 
 disp("  yn =");       disp(yn);
 disp("  yorigin =");  disp(yorigin);

@@ -96,7 +96,7 @@ subplot(3, 2, 6); stemplot(n, diff_cp, "(6) Difference y_2(n) - y''_2(n) = 0");
 savefig("add_ex2_6_c");
 
 mprintf("Exercise 2.6 (c): System y(n) = x(n) - x(n-1)\n");
-mprintf("  max|y_2(n) - y(n-2)| = %g -> Time-invariant\n\n", max(abs(diff_cp)));
+mprintf("  max|y_2(n) - y(n-2)| = %g -> No difference at k = 2, but cannot conclude the time-invariant property\n\n", max(abs(diff_cp)));
 
 // =========================================================================
 // Part (d): System y(n) = n * x(n)
