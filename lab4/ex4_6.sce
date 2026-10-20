@@ -42,4 +42,6 @@ subplot(2,2,1); stemplot(n_x, x,            "x(n)");
 subplot(2,2,2); stemplot(n_y, y_fs,         "y(n) = x(n) * h(n)");
 subplot(2,2,3); stemplot(n_x, abs(x).^2,    "|x(n)|^2,  Ex = " + string(Ex));
 subplot(2,2,4); stemplot(n_y, abs(y_fs).^2, "|y(n)|^2,  Ey = " + string(Ey));
+
+alignaxes();
 savefig("lab4_ex6");

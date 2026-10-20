@@ -44,4 +44,6 @@ subplot(2,2,1); stemplot(n, x,            "x(n), one period");
 subplot(2,2,2); stemplot(n, y_fs,         "y(n), circular convolution, N = 5");
 subplot(2,2,3); stemplot(n, abs(x).^2,    "|x(n)|^2,  Ex = " + string(Ex));
 subplot(2,2,4); stemplot(n, abs(y_fs).^2, "|y(n)|^2,  Ey = " + string(Ey));
+
+alignaxes();
 savefig("lab4_ex7");

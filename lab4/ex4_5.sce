@@ -76,4 +76,6 @@ subplot(2,2,1); showgray(img,     "Original");
 subplot(2,2,2); showgray(blur,    "Blurred (5x5 box filter)");
 subplot(2,2,3); showgray(wm,      "Watermarked (LSB, invisible)");
 subplot(2,2,4); showgray(255*rec, "Extracted watermark");
+
+alignaxes();
 savefig("lab4_ex5_filter");
